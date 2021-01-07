@@ -27,6 +27,10 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+And to  learn more about React Three fiber, here is the Repo:
+
+- [react-three-fiber repository](https://github.com/pmndrs/react-three-fiber) - has an example for both regular react and react w/ typescript
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
