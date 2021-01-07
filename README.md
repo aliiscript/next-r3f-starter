@@ -5,9 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Run the following command to create a new project with this Starter:
 
 ```
-yarn create next-app next-r3f-starter -e https://github.com/Alex23925/next-r3f-starter
+yarn create next-app [project name] -e https://github.com/Alex23925/next-r3f-starter
 # or
-npx create-next-app next-r3f-starter -e https://github.com/Alex23925/next-r3f-starter
+npx create-next-app [project name] -e https://github.com/Alex23925/next-r3f-starter
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
