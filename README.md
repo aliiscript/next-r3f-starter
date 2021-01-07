@@ -18,6 +18,9 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+Canvas Component by default is too small so added this class to resize to correct size
+Can be removed if you find a better solution to the problem
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
