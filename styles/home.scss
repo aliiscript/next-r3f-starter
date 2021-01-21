@@ -1,12 +1,13 @@
-.canvas-resize {
-  min-height: 100vh;
+.webgl {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
-.container {
+.page-wrapper {
   min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-width: 100vw;
+  overflow: hidden;
 }

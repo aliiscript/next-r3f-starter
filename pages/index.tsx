@@ -1,6 +1,7 @@
+import { useHelper } from 'drei'
 import Head from 'next/head'
-import React, { useRef, useState } from 'react'
-import { Canvas, MeshProps, useFrame } from 'react-three-fiber'
+import React, { useRef, useState, useEffect } from 'react'
+import { Canvas, MeshProps, useFrame, useThree } from 'react-three-fiber'
 import type { Mesh } from 'three'
 
 import '../styles/home.scss'
@@ -27,25 +28,74 @@ const Box: React.FC<MeshProps> = (props) => {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'red'} />
     </mesh>
   )
 }
 
 export default function Home() {
+  // Window Variables
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+  const [pixelRatio, setPixelRatio] = useState(0)
+
+  useEffect(() => {
+    const canvas = document.querySelector('.webgl')
+
+    setWidth(window.innerWidth)
+    setHeight(window.innerHeight)
+    setPixelRatio(window.devicePixelRatio)
+
+    window.addEventListener('resize', () => {
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
+      setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    })
+
+    // FullScreen Logic
+    window.addEventListener('dblclick', () => {
+      // Have yet to find a solution to stop complaining 
+      // about element not having the property webkitFullscreenElement
+
+      const document:any = window.document
+      const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
+
+      if (!fullscreenElement) {
+        if (canvas?.requestFullscreen) {
+          canvas.requestFullscreen()
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen()
+        } else if (document.webkitExitFullscreen) {
+          document.exitFullscreen()
+        }
+      }
+    })
+
+  }, []);
+
+  const sizes = {
+    width: typeof window !== undefined ? width : undefined,
+    height: typeof window !== undefined ? height : undefined
+  }
+
   return (
-    <div className="container">
+    <div className="page-wrapper">
       <Head>
         <title>Create Next r3f App</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      
-      <Canvas className="canvas-resize">
+
+      <Canvas
+        className="webgl"
+        style={{ width: sizes.width, height: sizes.height }}
+        pixelRatio={pixelRatio}
+      >
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
+        <Box position={[0, 0, 0]} />
       </Canvas>
 
     </div>
