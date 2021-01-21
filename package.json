@@ -12,6 +12,7 @@
     "drei": "^2.2.13",
     "next": "10.0.5",
     "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^6.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-three-fiber": "^5.3.11",

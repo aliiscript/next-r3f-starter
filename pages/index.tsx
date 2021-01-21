@@ -2,7 +2,8 @@ import { useHelper } from 'drei'
 import Head from 'next/head'
 import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, MeshProps, useFrame, useThree } from 'react-three-fiber'
-import { OrbitControls } from 'drei'
+import CameraControls from '../components/CameraControls'
+import Scene from '../components/Scene'
 import type { Mesh } from 'three'
 import '../styles/home.scss'
 
@@ -28,7 +29,7 @@ const Box: React.FC<MeshProps> = (props) => {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'red'} />
+      <meshStandardMaterial color={hovered ? 'green' : 'red'} />
     </mesh>
   )
 }
@@ -57,7 +58,7 @@ export default function Home() {
       // Have yet to find a solution to stop complaining 
       // about element not having the property webkitFullscreenElement
 
-      const document:any = window.document
+      const document: any = window.document
       const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
 
       if (!fullscreenElement) {
@@ -93,12 +94,8 @@ export default function Home() {
         style={{ width: sizes.width, height: sizes.height }}
         pixelRatio={pixelRatio}
       >
-        <OrbitControls />
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position={[0, 0, 0]} />
+        <Scene />
       </Canvas>
-
     </div>
   )
 }
