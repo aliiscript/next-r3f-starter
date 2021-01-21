@@ -2,8 +2,8 @@ import { useHelper } from 'drei'
 import Head from 'next/head'
 import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, MeshProps, useFrame, useThree } from 'react-three-fiber'
+import { OrbitControls } from 'drei'
 import type { Mesh } from 'three'
-
 import '../styles/home.scss'
 
 const Box: React.FC<MeshProps> = (props) => {
@@ -93,6 +93,7 @@ export default function Home() {
         style={{ width: sizes.width, height: sizes.height }}
         pixelRatio={pixelRatio}
       >
+        <OrbitControls />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Box position={[0, 0, 0]} />
