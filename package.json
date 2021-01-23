@@ -14,6 +14,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^6.0.0",
     "react": "17.0.1",
+    "react-dat-gui": "^4.0.3",
     "react-dom": "17.0.1",
     "react-three-fiber": "^5.3.11",
     "sass": "^1.32.2",

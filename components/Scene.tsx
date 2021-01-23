@@ -3,7 +3,19 @@ import { MeshProps, useFrame} from 'react-three-fiber'
 import type { Mesh } from 'three'
 import CameraControls from './CameraControls'
 
-const Box: React.FC<MeshProps> = (props) => {
+interface SceneProps {
+    color: string,
+    hoverColor:string
+}
+
+interface BoxProps {
+    color: string,
+    hoverColor: string
+}
+
+const Box = (props: BoxProps) => {
+    let color = props.color
+    let hoverColor = props.hoverColor
     // This reference will give us direct access to the mesh
     const mesh = useRef<Mesh>()
 
@@ -18,24 +30,23 @@ const Box: React.FC<MeshProps> = (props) => {
 
     return (
         <mesh
-            {...props}
             ref={mesh}
             scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
             onClick={(event) => setActive(!active)}
             onPointerOver={(event) => setHover(true)}
             onPointerOut={(event) => setHover(false)}>
             <boxBufferGeometry args={[1, 1, 1]} />
-            <meshStandardMaterial color={hovered ? 'blue' : 'green'} />
+            <meshStandardMaterial color={hovered ? hoverColor : color} />
         </mesh>
     )
 }
 
-export default function Scene() {
+export default function Scene(props: SceneProps) {
     return (
         <>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <Box position={[0, 0, 0]} />
+            <Box color={props.color} hoverColor={props.hoverColor} />
             <CameraControls />
         </>
     )
