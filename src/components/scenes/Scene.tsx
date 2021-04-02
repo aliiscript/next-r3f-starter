@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import CameraControls from './CameraControls';
+import CameraControls from '../canvas/CameraControls';
 
 import type { Mesh } from "three";
 

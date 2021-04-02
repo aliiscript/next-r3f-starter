@@ -1,9 +1,9 @@
 import { useControls } from "leva";
 import React, { useRef, useState, useEffect } from "react";
-import Scene from "../components/Scene";
+import Scene from "../components/scenes/Scene";
 import "../styles/home.scss";
-import CanvasLayout from "../components/CanvasLayout";
-import Layout from "../components/Layout";
+import CanvasLayout from "../components/canvas/CanvasLayout";
+import Layout from "../components/layout/Layout";
 
 export default function Home() {
     const { color, hoverColor } = useControls({

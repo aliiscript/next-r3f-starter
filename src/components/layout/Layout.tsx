@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Meta from './Meta'
 
-import '../styles/layout.scss';
+import '../../styles/layout.scss';
 
 interface LayoutProps {
     lessonName: string
