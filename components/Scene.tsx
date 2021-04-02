@@ -1,32 +1,34 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { MeshProps, useFrame} from 'react-three-fiber'
-import type { Mesh } from 'three'
-import CameraControls from './CameraControls'
+import React, { useRef, useState, useEffect } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import CameraControls from '../components/CameraControls';
+import { OrbitControls } from "@react-three/drei";
+import type { Mesh } from "three";
 
 interface SceneProps {
-    color: string,
-    hoverColor:string
+    color: string;
+    hoverColor: string;
 }
 
 interface BoxProps {
-    color: string,
-    hoverColor: string
+    color: string;
+    hoverColor: string;
 }
 
 const Box = (props: BoxProps) => {
-    let color = props.color
-    let hoverColor = props.hoverColor
+    let color = props.color;
+    let hoverColor = props.hoverColor;
     // This reference will give us direct access to the mesh
-    const mesh = useRef<Mesh>()
+    const mesh = useRef<Mesh>();
 
     // Set up state for the hovered and active state
-    const [hovered, setHover] = useState(false)
-    const [active, setActive] = useState(false)
+    const [hovered, setHover] = useState(false);
+    const [active, setActive] = useState(false);
 
     // Rotate mesh every frame, this is outside of React without overhead
     useFrame(() => {
-        if (mesh.current) mesh.current.rotation.x = mesh.current.rotation.y += 0.01
-    })
+        if (mesh.current)
+            mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    });
 
     return (
         <mesh
@@ -34,12 +36,13 @@ const Box = (props: BoxProps) => {
             scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
             onClick={(event) => setActive(!active)}
             onPointerOver={(event) => setHover(true)}
-            onPointerOut={(event) => setHover(false)}>
+            onPointerOut={(event) => setHover(false)}
+        >
             <boxBufferGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color={hovered ? hoverColor : color} />
         </mesh>
-    )
-}
+    );
+};
 
 export default function Scene(props: SceneProps) {
     return (
@@ -49,5 +52,5 @@ export default function Scene(props: SceneProps) {
             <Box color={props.color} hoverColor={props.hoverColor} />
             <CameraControls />
         </>
-    )
+    );
 }
