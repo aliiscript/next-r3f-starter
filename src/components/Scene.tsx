@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import CameraControls from '../components/CameraControls';
-import { OrbitControls } from "@react-three/drei";
+import CameraControls from './CameraControls';
+
 import type { Mesh } from "three";
 
 interface SceneProps {
