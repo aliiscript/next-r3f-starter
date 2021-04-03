@@ -7,7 +7,7 @@ import Layout from "../components/layout/Layout";
 
 export default function Home() {
     const { color, hoverColor } = useControls({
-        color: "#ff6030",
+        color: "#bab568",
         hoverColor: "#1b3984",
     });
 
