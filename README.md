@@ -1,4 +1,4 @@
-## ☕✍️ React Three Fiber Next Start W/TypeScript 
+## ☕✍️ React Three Fiber Next Starter W/TypeScript 
 
 First Load is way faster thanks to [RenaudRohlinger](https://github.com/RenaudRohlinger) next.config
 
