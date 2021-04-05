@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-spring/three": "^9.0.0",
     "@react-three/cannon": "^0.6.1",
     "@react-three/drei": "^3.11.0",
     "@react-three/fiber": "^6.0.5",
+    "@react-three/postprocessing": "^2.0.2",
     "@zeit/next-sass": "^1.0.1",
     "file-loader": "^6.2.0",
     "framer-motion": "^3.10.5",
@@ -26,6 +28,7 @@
     "react-dom": "17.0.1",
     "sass": "^1.32.2",
     "three": "^0.124.0",
+    "three-stdlib": "^1.2.1",
     "zustand": "^3.3.3"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { extend, ReactThreeFiber, useFrame, useThree } from '@react-three/fiber'
+import { extend, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 extend({ OrbitControls })
 
