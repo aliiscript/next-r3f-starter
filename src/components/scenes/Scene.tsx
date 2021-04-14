@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import CameraControls from '../canvas/CameraControls';
+import { OrbitControls } from "@react-three/drei";
 import type { Mesh } from "three";
 
 interface SceneProps {
@@ -49,7 +49,7 @@ export default function Scene(props: SceneProps) {
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
             <Box color={props.color} hoverColor={props.hoverColor} />
-            <CameraControls />
+            <OrbitControls />
         </>
     );
 }

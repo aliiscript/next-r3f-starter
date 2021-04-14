@@ -96,11 +96,11 @@ const withImages = require("next-images");
 const { default: next } = require("next");
 const { watch } = require("fs");
 
-const withTM = require("next-transpile-modules")(
-    ["three", "@react-three/drei"], // '@react-three/postprocessing'
-    { debug: debug, __unstable_matcher: match } // symlink-caused loops which cause memory to get bloated exponentially.
-);
-module.exports = withPlugins(
-    [withTM(nextConfig), withImages, withSass],
-    nextConfig
-);
+// const withTM = require("next-transpile-modules")(
+//     ["three", "@react-three/drei"], // '@react-three/postprocessing'
+//     { debug: debug, __unstable_matcher: match } // symlink-caused loops which cause memory to get bloated exponentially.
+// );
+
+// withTM(nextConfig),
+
+module.exports = withPlugins([withImages, withSass], nextConfig);
