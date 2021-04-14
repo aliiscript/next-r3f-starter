@@ -1,7 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ☕✍️ React Three Fiber Next Starter W/TypeScript 
 
-## Getting Started
-
+## How To Use
 Run the following command to create a new project with this Starter:
 
 ```
