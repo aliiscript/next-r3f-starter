@@ -4,19 +4,16 @@ import Meta from './Meta'
 import '../../styles/layout.scss';
 
 interface LayoutProps {
-    lessonName: string
-    lessonNum: number
-    chNum: number
+    title: string
     children: ReactNode
 }
 
-export default function Layout({ lessonName, lessonNum, chNum, children }: LayoutProps) {
+export default function Layout({ title, children }: LayoutProps) {
     return (
         <>
             <Meta
-                lessonName={lessonName}
-                lessonNum={lessonNum}
-                chNum={chNum}
+                title={title}
+                
             />
             <main className="page-wrapper">{children}</main>
         </>

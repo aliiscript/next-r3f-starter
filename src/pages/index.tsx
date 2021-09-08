@@ -13,7 +13,7 @@ export default function Home() {
 
     return (
         <>
-            <Layout lessonName={"First"} lessonNum={0} chNum={1}>
+            <Layout title={"First"}>
                 <CanvasLayout>
                     <Scene color={color} hoverColor={hoverColor} />
                 </CanvasLayout>
