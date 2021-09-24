@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Meta from './Meta'
 
-import '../../styles/layout.scss';
+import styles from '../../styles/layout.module.scss';
 
 interface LayoutProps {
     title: string
@@ -15,7 +15,7 @@ export default function Layout({ title, children }: LayoutProps) {
                 title={title}
                 
             />
-            <main className="page-wrapper">{children}</main>
+            <main className={styles.pagewrapper}>{children}</main>
         </>
     )
 }

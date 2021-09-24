@@ -1,7 +1,7 @@
 import { useControls } from "leva";
 import React, { useRef, useState, useEffect } from "react";
 import Scene from "../components/scenes/Scene";
-import "../styles/home.scss";
+import styles from "../styles/home.module.scss";
 import CanvasLayout from "../components/canvas/CanvasLayout";
 import Layout from "../components/layout/Layout";
 

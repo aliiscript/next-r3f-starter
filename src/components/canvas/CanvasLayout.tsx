@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 import React, { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Perf } from "r3f-perf";
+import styles from "../../styles/home.module.scss";
 
 interface CanvasLayoutProps {
     children: ReactNode
@@ -61,7 +62,7 @@ export default function CanvasLayout({ children }: CanvasLayoutProps) {
     return (
         <>
             <Canvas
-                className="webgl"
+                className={styles.webgl}
                 style={{ width: sizes.width, height: sizes.height }}
                 // pixelRatio={pixelRatio}
                 camera={{
@@ -73,7 +74,7 @@ export default function CanvasLayout({ children }: CanvasLayoutProps) {
             >
                 {children}
                
-                {/* <Perf position={"bottom-right"} /> */}
+                <Perf position={"bottom-right"} />
             </Canvas>
         </>
     );

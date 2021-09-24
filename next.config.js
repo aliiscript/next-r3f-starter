@@ -91,7 +91,6 @@ const nextConfig = {
 };
 
 const withPlugins = require("next-compose-plugins");
-const withSass = require("@zeit/next-sass");
 const withImages = require("next-images");
 const { default: next } = require("next");
 const { watch } = require("fs");
@@ -103,4 +102,6 @@ const { watch } = require("fs");
 
 // withTM(nextConfig),
 
-module.exports = withPlugins([withImages, withSass], nextConfig);
+module.exports = withPlugins([withImages], {sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },}, nextConfig);
