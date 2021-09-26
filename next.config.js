@@ -66,25 +66,6 @@ const nextConfig = {
                     },
                 },
             }
-            // png and jpg file-loader were here
-            // removed due to an error with loading scene background
-            // however now that it is removed I cannot load textures and bin files
-            // for a model so I either use .glb or find another solution
-            // {
-            //     test: /\.(png)$/,
-            //     exclude: [
-            //         '/static/textures'
-            //     ],
-            //     use: {
-            //     loader: 'file-loader',
-            //     options: {
-            //         publicPath: "/_next/static/images",
-            //         outputPath: "static/images/",
-            //         name: '[name].[ext]', // keep the original name
-            //         watch: true,
-            //     }
-            //     },
-            // },
         );
         return config;
     },
@@ -94,13 +75,6 @@ const withPlugins = require("next-compose-plugins");
 const withImages = require("next-images");
 const { default: next } = require("next");
 const { watch } = require("fs");
-
-// const withTM = require("next-transpile-modules")(
-//     ["three", "@react-three/drei"], // '@react-three/postprocessing'
-//     { debug: debug, __unstable_matcher: match } // symlink-caused loops which cause memory to get bloated exponentially.
-// );
-
-// withTM(nextConfig),
 
 module.exports = withPlugins([withImages], {sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

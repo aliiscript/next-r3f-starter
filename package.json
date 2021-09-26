@@ -1,11 +1,13 @@
 {
   "name": "next-r3f-starter",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@react-spring/three": "^9.0.0",
@@ -14,11 +16,11 @@
     "@react-three/fiber": "^7.0.7",
     "@react-three/postprocessing": "^2.0.5",
     "framer-motion": "^4.1.17",
+    "glsl-random": "^0.0.5",
     "leva": "^0.9.14",
     "next": "^11.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.7.0",
-    "next-transpile-modules": "^6.3.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "sass": "^1.42.1",
@@ -29,6 +31,8 @@
   "devDependencies": {
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
