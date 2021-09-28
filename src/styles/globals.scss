@@ -3,6 +3,13 @@
    License: none (public domain)
 */
 
+// From Josh Comeau course, always has this styles
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body,
 div,
