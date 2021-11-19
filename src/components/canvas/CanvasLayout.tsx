@@ -2,13 +2,13 @@ import { ReactNode } from "react"
 import React, { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Perf } from "r3f-perf";
-import styles from "../../styles/home.module.scss";
+import styled from 'styled-components';
 
 interface CanvasLayoutProps {
     children: ReactNode
 }
 
-export default function CanvasLayout({ children }: CanvasLayoutProps) {
+function CanvasLayout({ children }: CanvasLayoutProps) {
     // Window Variables
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
@@ -61,9 +61,12 @@ export default function CanvasLayout({ children }: CanvasLayoutProps) {
 
     return (
         <>
-            <Canvas
-                className={styles.webgl}
-                style={{ width: sizes.width, height: sizes.height }}
+            <StyledCanvas
+                style={{ 
+                    width: sizes.width, 
+                    height: sizes.height,
+                    backgroundColor: "black" 
+                }}
                 // pixelRatio={pixelRatio}
                 camera={{
                     position: [0, 0, 3],
@@ -75,8 +78,17 @@ export default function CanvasLayout({ children }: CanvasLayoutProps) {
                 {children}
                
                 <Perf position={"bottom-right"} />
-            </Canvas>
+            </StyledCanvas>
         </>
     );
 
 }
+
+const StyledCanvas = styled(Canvas)`
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+`;
+
+export default CanvasLayout;

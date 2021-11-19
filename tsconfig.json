@@ -21,7 +21,8 @@
       "react-three-fiber": [
         "./"
       ]
-    }
+    },
+    "incremental": true
   },
   "typeRoots": [
     "./typings",

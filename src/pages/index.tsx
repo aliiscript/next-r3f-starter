@@ -1,9 +1,8 @@
 import { useControls } from "leva";
-import React, { useRef, useState, useEffect } from "react";
 import Scene from "../components/scenes/Scene";
-import styles from "../styles/home.module.scss";
-import CanvasLayout from "../components/canvas/CanvasLayout";
+import CanvasLayout from "../components/canvas/index";
 import Layout from "../components/layout/Layout";
+import GlobalStyles from "../components/GlobalStyles";
 
 export default function Home() {
     const { color, hoverColor } = useControls({
@@ -18,6 +17,7 @@ export default function Home() {
                     <Scene color={color} hoverColor={hoverColor} />
                 </CanvasLayout>
             </Layout>
+            <GlobalStyles />
         </>
     );
 }

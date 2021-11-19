@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
-import Meta from './Meta'
-
-import styles from '../../styles/layout.module.scss';
+import styled from 'styled-components';
+import Head from "next/head";
 
 interface LayoutProps {
     title: string
@@ -11,11 +10,21 @@ interface LayoutProps {
 export default function Layout({ title, children }: LayoutProps) {
     return (
         <>
-            <Meta
-                title={title}
-                
-            />
-            <main className={styles.pagewrapper}>{children}</main>
+            <Head>
+                <meta name="title" content={`placeholder`} />
+                <meta name="description" content={`placeholder`} />
+                <meta name="keywords" content="threejs, react, showcase " />
+                <meta name="robots" content="index, follow" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta name="language" content="English" />
+            </Head>
+            <StyledMain>{children}</StyledMain>
         </>
     )
 }
+
+const StyledMain = styled.main`
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: hidden;
+`;
