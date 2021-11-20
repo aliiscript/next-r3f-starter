@@ -1,7 +1,7 @@
 import { useControls } from "leva";
-import Scene from "../components/scenes/Scene";
+import Scene from "../components/scenes/index";
 import CanvasLayout from "../components/canvas/index";
-import Layout from "../components/layout/Layout";
+import Layout from "../components/layout/index";
 import GlobalStyles from "../components/GlobalStyles";
 
 export default function Home() {

@@ -43,7 +43,7 @@ const Box = (props: BoxProps) => {
     );
 };
 
-export default function Scene(props: SceneProps) {
+function Scene(props: SceneProps) {
     return (
         <>
             <ambientLight />
@@ -53,3 +53,5 @@ export default function Scene(props: SceneProps) {
         </>
     );
 }
+
+export default Scene;

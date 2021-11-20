@@ -7,7 +7,7 @@ interface LayoutProps {
     children: ReactNode
 }
 
-export default function Layout({ title, children }: LayoutProps) {
+function Layout({ title, children }: LayoutProps) {
     return (
         <>
             <Head>
@@ -28,3 +28,5 @@ const StyledMain = styled.main`
     min-width: 100vw;
     overflow: hidden;
 `;
+
+export default Layout;
