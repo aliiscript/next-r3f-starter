@@ -1,5 +1,7 @@
 ## ☕✍️ React Three Fiber Next Starter W/TypeScript 
 
+:warning:This is my [official r3f-next starter](https://github.com/aliiscript/next-three-fiber). Will no longer be updating this one. Learned alot and wanted to start fresh! Will leave this up for those who are using it/like it :warning:
+
 First Load is way faster thanks to [RenaudRohlinger](https://github.com/RenaudRohlinger) next.config
 
 ## How To Use
